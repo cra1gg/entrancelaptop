@@ -6,7 +6,7 @@ app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
 
-@app.route('/sleep', methods=['GET'])
+@app.route('/sleep', methods=['PUT'])
 def sleep():
     os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
     return "<h1>Command run sucessfully!</h1>"
