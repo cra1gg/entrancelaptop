@@ -32,20 +32,14 @@ while True:
         send_magic_packet('F8-CA-B8-34-7C-4D', ip_address='192.168.1.255')
         send_magic_packet('F8-CA-B8-34-7C-4D', ip_address='192.168.1.255')
         send_magic_packet('F8-CA-B8-34-7C-4D', ip_address='192.168.1.255')
-        send_magic_packet('F8-CA-B8-34-7C-4D', ip_address='192.168.1.255')
         try:
-            send_magic_packet('F8-CA-B8-34-7C-4D', ip_address='192.168.1.255')
-            send_magic_packet('F8-CA-B8-34-7C-4D', ip_address='192.168.1.255')
-            send_magic_packet('F8-CA-B8-34-7C-4D', ip_address='192.168.1.255')
-            send_magic_packet('F8-CA-B8-34-7C-4D', ip_address='192.168.1.255')
-            send_magic_packet('F8-CA-B8-34-7C-4D', ip_address='192.168.1.255')
             requests.get('http://192.168.1.90:8080/wake', timeout=1)
         except:
             print("Timed out (wake)")
         laptop_on = True
     if state == 0 and laptop_on:
         try:
-            requests.put('http://192.168.1.90:8080/sleep', timeout=0.005)
+            requests.put('http://192.168.1.90:8080/sleep', timeout=1)
         except:
             print("Timed out (sleep)")
         laptop_on = False

@@ -8,7 +8,7 @@ app.config["DEBUG"] = True
 
 @app.route('/sleep', methods=['PUT'])
 def sleep():
-    os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
+    os.system("psshutdown -d -t 0")
     return "<h1>Command run sucessfully!</h1>"
 
 @app.route('/wake', methods=['GET'])
