@@ -21,9 +21,9 @@ def ping_ip(current_ip_address):
         except Exception:
                 return False
 
+laptop_on = False
 while True: 
     #laptop_on = ping_ip('192.168.1.90')
-    laptop_on = True
     url = pywemo.setup_url_for_address("192.168.1.177", None)
     device = pywemo.discovery.device_from_description(url, None)
     state = device.get_state()
