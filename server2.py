@@ -23,7 +23,6 @@ def ping_ip(current_ip_address):
 
 laptop_on = False
 while True: 
-    laptop_on = ping_ip('192.168.1.90')
     try:
         url = pywemo.setup_url_for_address("192.168.1.177", None)
         device = pywemo.discovery.device_from_description(url, None)
@@ -45,4 +44,4 @@ while True:
             requests.put('http://192.168.1.90:8080/sleep', timeout=1)
         except:
             print("Timed out (sleep)")
-        laptop_on = False
+        laptop_on = ping_ip('192.168.1.90')
