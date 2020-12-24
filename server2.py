@@ -23,10 +23,13 @@ def ping_ip(current_ip_address):
 
 laptop_on = False
 while True: 
-    #laptop_on = ping_ip('192.168.1.90')
-    url = pywemo.setup_url_for_address("192.168.1.177", None)
-    device = pywemo.discovery.device_from_description(url, None)
-    state = device.get_state()
+    laptop_on = ping_ip('192.168.1.90')
+    try:
+        url = pywemo.setup_url_for_address("192.168.1.177", None)
+        device = pywemo.discovery.device_from_description(url, None)
+        state = device.get_state()
+    except:
+        print("Error connecting to switch")
     if state == 1 and not laptop_on:
         send_magic_packet('F8-CA-B8-34-7C-4D', ip_address='192.168.1.255')
         send_magic_packet('F8-CA-B8-34-7C-4D', ip_address='192.168.1.255')
