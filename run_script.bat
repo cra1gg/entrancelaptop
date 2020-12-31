@@ -1,3 +1,4 @@
 ECHO Script Starting
-python server.py
+python laptop.py
+python key_press.py
 ECHO Script Started
